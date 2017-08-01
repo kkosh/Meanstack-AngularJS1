@@ -1,0 +1,136 @@
+<br/><br/>
+<h3>User Registration </h3>
+
+
+<form name="registerForm" ng-submit="register.userRegistration(regUser)" novalidate>
+<br/>
+<div class="row">
+
+    
+    <label>Username</label>
+    
+    <div class="input-group ">
+    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+    <input type="text" class="form-control" name="username" ng-model="register.regUser.username" placeholder="Please enter Username" required>
+    </div>
+   
+    <span style="color:red" ng-show="registerForm.username.$dirty && registerForm.username.$invalid">
+    <br/>
+    <span ng-show="registerForm.username.$error.required" class="warning"><strong>Username is required.</strong></span>
+    <br/>
+    </span>
+    <br/>
+
+    
+    <label>Password</label>
+    <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+    <input type="password" class="form-control" name="pwd" ng-model="register.regUser.password" placeholder="Please enter Password" required>
+    </div>
+    
+    <span style="color:red" ng-show="registerForm.pwd.$dirty && registerForm.pwd.$invalid">
+    <br/>
+    <span ng-show="registerForm.pwd.$error.required" class="warning"><strong>Password is required.</strong></span>
+    <br/>
+    </span>
+    <br/>
+    
+    
+    <label>Firstname</label>
+    <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+    <input type="text" class="form-control" name="fname" ng-model="register.regUser.firstname" placeholder="Please enter Firstname" required>
+    </div>
+    
+    <span style="color:red" ng-show="registerForm.fname.$dirty && registerForm.fname.$invalid">
+    <br/>
+    <span ng-show="registerForm.fname.$error.required" class="warning"><strong>Firstname is required.</strong></span>
+    <br/>
+    </span>
+    <br/>
+
+    
+    <label>Lastname</label>
+    <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+    <input type="text" class="form-control" name="lname" ng-model="register.regUser.lastname" placeholder="Please enter Lastname" required>
+    </div>
+    
+    <span style="color:red" ng-show="registerForm.lname.$dirty && registerForm.lname.$invalid">
+    <br/>
+    <span ng-show="registerForm.lname.$error.required" class="warning"><strong>Lastname is required.</strong></span>
+    <br/>
+    </span>
+    <br/>
+
+    
+    <label>Email</label>
+    <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+    <input type="email" class=" label-margin form-control" name = "email" ng-model="register.regUser.email" placeholder="Please enter Email" required>
+    </div>
+    
+    <span style="color:red" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">
+    <br/>     
+        <span ng-show="registerForm.email.$error.required" class="warning"><strong>Email is required.</strong></span>
+        <span ng-show="registerForm.email.$error.email" class="warning"><strong>Invalid email address.</strong></span>
+    <br/>     
+    </span>
+    <br/>
+
+    
+    <label>Phone</label>
+    <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-phone"></i></span>    
+    <input type="number" class="form-control label-margin" name="phone" ng-model="register.regUser.phone" placeholder="Please enter Phone Number" required>
+    </div>
+    
+    <span style="color:red" ng-show="registerForm.phone.$dirty && registerForm.phone.$invalid">
+    <br/> 
+        <span ng-show="registerForm.phone.$error.required" class="warning"><strong>Phone number is required.</strong></span>
+        <span ng-show="registerForm.phone.$error.number" class="warning"><strong> Please enter valid phone number</strong></span>
+    <br/> 
+    </span>
+    <br/>
+
+    
+    <label>Location</label>
+    <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-location-arrow"></i></span>
+    <input type="text" class="form-control label-margin" name="location" ng-model="register.regUser.location" placeholder="Please enter Phone Location" required>
+    </div>
+    
+    <span style="color:red" ng-show="registerForm.location.$dirty && registerForm.location.$invalid">
+    <br/>    
+        <span ng-show="registerForm.location.$error.required" class="warning"><strong>Address is required.</strong></span>
+    <br/>
+    </span>
+
+    
+    <br/>
+    <br/>
+    
+    <button type="submit" class="btn btn-default" ng-disabled="registerForm.$dirty && registerForm.$invalid">Register</button>
+    
+    </div>
+
+</form>
+
+
+<br/>
+
+<div class="alert alert-success" ng-show="register.successMsg">
+
+    <strong>Well Done !!!</strong> {{ register.successMsg }}  
+
+</div>
+
+
+<div class="alert alert-danger" ng-show="register.errorMsg">
+
+    <strong>Oops !!!</strong>  {{register.errorMsg}}
+
+</div>
+
+
+

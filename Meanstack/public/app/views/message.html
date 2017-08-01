@@ -1,0 +1,139 @@
+<h1>hello from message</h1>
+
+
+    
+<div> <strong> 
+    <td><button data-toggle="modal" data-target="#myModal" class="btn btn-default composeMsg"><i class="glyphicon glyphicon-edit"></i></button></td> </strong> 
+</div>
+
+<br/><br/>
+
+<br/><br/>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Update Details</h4>
+        </div>
+        <div class="modal-body">
+          
+           <form name="editForm" ng-submit = "message.sendMsg(msgData)"> 
+           
+               <label class="msglabel" ng-model="message.msgData.from"> From : {{ message.email }} </label>
+               
+               <br/>
+               <br/>
+               
+               
+               
+        <label class="msgTo"> To </label>
+               
+        
+        <input type="text" class="form-control msg" ng-model="message.msgData.to" placeholder="Please enter Username" required>
+    
+        <br/>
+
+        <label class="msglabel"> Message </label>
+        <textarea rows="5" cols="50" class="form-control msg"  ng-model="message.msgData.content" placeholder="Please enter your message here..."></textarea>
+   
+    <br/>
+    
+  
+    
+        <button type="submit" id="modalBtn" data-toggle="modal" data-target="#myModal" class="btn btn-default">Send</button>
+    
+    </form>
+        
+            
+           
+            
+            
+          </div>        
+            
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+<table class="table">
+
+    <tr>
+        
+        <td><h3> From </h3> </td>
+        <td> <h3> Message </h3></td>
+        <td> </td>
+        
+    </tr>
+
+    <tr ng-repeat = " msg in messages "> 
+        
+        <td> {{ msg.from }} </td>
+        <td> {{ msg.content }} </td>
+        <td><button ng-click="message.getUser(msg.from)" class="btn btn-default btnReply" data-toggle="modal" data-target="#myModal1" > Reply </button> 
+        <td><button ng-click="message.getIndex($index)" class="btn btn-default "> Delete </button> </td>
+        </td>
+        
+        
+    </tr>
+    
+</table>
+
+ <span class="alert alert-info" ng-show= "message.msg" > {{message.msg}} </span>
+
+<br/><br/>
+
+<br/><br/>
+
+<div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Update Details</h4>
+        </div>
+        <div class="modal-body">
+          
+           <form name="sendForm" ng-submit = "message.doReply(msgData)"> 
+           
+               <label class="msglabel" ng-model="message.msgData.from"> From : {{ message.email }} </label>
+               
+               <br/>
+               <br/>
+               
+               
+               
+        <label class="msgTo"> To </label>
+               
+        
+        <input type="text" class="form-control msg" ng-model="message.to" placeholder="Please enter Username" required>
+    
+        <br/>
+
+        <label class="msglabel"> Message </label>
+        <textarea rows="5" cols="50" class="form-control msg"  ng-model="message.msgData.content" placeholder="Please enter your message here..."></textarea>
+   
+    <br/>
+    
+  
+    
+        <button type="submit" id="modalBtn" data-toggle="modal" data-target="#myModal1" class="btn btn-default">Send</button>
+    
+    </form>
+        
+            
+           
+            
+            
+          </div>        
+            
+        </div>
+        
+      </div>
+      
+    </div>

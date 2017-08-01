@@ -1,0 +1,1 @@
+var app = angular.module('mainModule', ['routing', 'messageModule', 'loginModule', 'profileModule','registerModule', 'SessionServiceModule', 'routeAuth','UserDetailsModule']);

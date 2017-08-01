@@ -1,0 +1,105 @@
+<h1>hello from profile</h1>
+
+
+    
+<div>   <strong> 
+    <input type="checkbox" ng-model="showPwd" id="checkBox" > Show Password </strong>
+</div>
+
+    <br/><br/>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Update Details</h4>
+        </div>
+        <div class="modal-body">
+          
+           <form name="editForm" ng-submit = "profile.updateUser()"> 
+            
+        <label id="modalLabel"> Username </label>
+        <input type="text" class="form-control formModal" ng-model="profile.username" placeholder="Please enter Username" required>
+    
+    <br/>
+
+        <label id="modalLabel">Password</label>
+        <input type="password" class="form-control formModal" ng-model="profile.password" placeholder="Please enter Password">
+   
+    <br/>
+    
+        <label id="modalLabel">Firstname</label>
+        <input type="text" class="form-control formModal" ng-model="profile.firstname" placeholder="Please enter Firstname">
+    
+    <br/>
+
+        <label id="modalLabel">Lastname</label>
+        <input type="text" class="form-control formModal" ng-model="profile.lastname" placeholder="Please enter Lastname">
+    
+    <br/>
+
+        <label id="modalLabel">Email</label>
+        <input type="email" class=" label-margin form-control formModal" ng-model="profile.email" placeholder="Please enter Email">
+
+    <br/>
+
+        <label id="modalLabel">Phone</label>
+        <input type="number" class="form-control label-margin formModal" ng-model="profile.phone" placeholder="Please enter Phone Number">
+
+    <br/>
+
+        <label id="modalLabel">Location</label>
+        <input type="text" class="form-control label-margin formModal" ng-model="profile.location" placeholder="Please enter Phone Location">
+    
+    <br/>
+    <br/>
+    
+        <button type="submit" id="modalBtn" data-toggle="modal" data-target="#myModal" class="btn btn-default">Update</button>
+    
+    </form>
+        
+          </div>        
+            
+        </div>
+        
+      </div>
+      
+    </div>
+    
+<table class="table" >
+    
+    
+    <tr>
+        
+        <td><strong>Username</strong></td>
+        
+        <td ng-show="showPwd"><strong>Password</strong></td>
+        <td ng-hide="showPwd"><strong>Password</strong></td>
+        <td><strong>Firstname</strong></td>
+        <td><strong>Lastname</strong></td>
+        <td><strong>Email</strong></td>
+        <td><strong>Phone</strong></td>
+        <td><strong>Location</strong></td>
+        <td></td>
+         
+    </tr>
+    
+    <tr>
+        
+        <td>{{profile.username}}</td>        
+        <td ng-show="showPwd">{{profile.password}}</td>        
+        <td ng-hide="showPwd">####</td>        
+        <td>{{profile.firstname}}</td>        
+        <td>{{profile.lastname}}</td>        
+        <td>{{profile.email}}</td>        
+        <td>{{profile.phone}}</td>        
+        <td>{{profile.location}}</td> 
+        <td><button data-toggle="modal" data-target="#myModal" class="btn btn-default">Edit</button></td>
+        
+    </tr>
+    
+</table>
+
+    

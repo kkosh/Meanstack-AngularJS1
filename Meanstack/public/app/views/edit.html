@@ -1,0 +1,70 @@
+<br/><br/>
+<h3> Update Details </h3>
+
+
+<form name="registerForm" ng-submit="register.userRegistration(regUser)" novalidate>
+<br/>
+<div class="row">
+
+    
+    <label>Username</label>
+    
+    <div class="input-group ">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <input type="text" class="form-control" ng-model="profile.username" placeholder="Please enter Username" required>
+    </div>
+    
+    <br/>
+
+        <label>Password</label>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+        <input type="password" class="form-control" ng-model="profile.password" placeholder="Please enter Password">
+    </div>
+
+    <br/>
+    
+    <label>Firstname</label>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <input type="text" class="form-control" ng-model="profile.firstname" placeholder="Please enter Firstname"> 
+    </div>
+    <br/>
+
+    <label>Lastname</label>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <input type="text" class="form-control" ng-model="profile.lastname" placeholder="Please enter Lastname"> 
+    </div>
+    <br/>
+
+    <label>Email</label>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+        <input type="email" class=" label-margin form-control" ng-model="profile.email" placeholder="Please enter Email">
+    </div>
+
+    <br/>
+
+    <label>Phone</label>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-phone"></i></span>    
+        <input type="number" class="form-control label-margin" ng-model="profile.phone" placeholder="Please enter Phone Number"> 
+    </div>
+    <br/>
+
+    <label>Location</label>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-location-arrow"></i></span>
+        <input type="text" class="form-control label-margin" ng-model="profile.location" placeholder="Please enter Phone Location">
+    </div>
+    <br/>
+    <br/>
+    
+    <button type="submit" class="btn btn-default">Update</button>
+    </div>
+
+</form>
+
+
+
